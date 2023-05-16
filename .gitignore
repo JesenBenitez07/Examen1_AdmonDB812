@@ -1,0 +1,6 @@
+*.mdf
+*.ldf
+*.bin
+*.ndf
+
+file_db/mysql/*

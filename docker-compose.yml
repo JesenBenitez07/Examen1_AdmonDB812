@@ -1,0 +1,13 @@
+version: '3.1'
+#     MYSQLSERVER
+services:
+  sql_server:
+    container_name: mysql
+    build: 
+      context: .
+      target: mysql
+    ports:
+      - 1465:1433
+    volumes:
+      - ./file_db/SQLServer/:/var/opt/mssql/data/
+    restart: always
