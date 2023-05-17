@@ -1,8 +1,4 @@
-# Script Bases de datos
-
 create database examen_JesenBenitez
-
-use examen_JesenBenitez
 
 create table proveedor(
 id_proveedor varchar(5) not null Primary key,
@@ -133,7 +129,7 @@ Foreign Key(id_cliente) References cliente(id_cliente),
 INSERT INTO cliente VALUES 
 ('C001', 'Juan Ramirez', 123456789),
 ('C002', 'Maria Fernandez', 987654321),
-('C003', 'Javier Lopez', 555555555);
+('C003', 'Javier Lopez', 555555555),
 ('C004', 'Ana Perez', 111111111),
 ('C005', 'Luis Gonzalez', 222222222),
 ('C006', 'Carla Martinez', 333333333),
@@ -150,7 +146,7 @@ INSERT INTO cliente VALUES
 INSERT INTO credito VALUES 
 ('CR001', 'C001', 10000, 5000),
 ('CR002', 'C002', 15000, 10000),
-('CR003', 'C003', 20000, 15000);
+('CR003', 'C003', 20000, 15000),
 ('CR004', 'C004', 12000, 8000),
 ('CR005', 'C005', 18000, 12000),
 ('CR006', 'C006', 25000, 20000),
@@ -181,7 +177,7 @@ INSERT INTO pagos VALUES
 ('P014', 'CR007', 2500),
 ('P015', 'CR008',1500);
 
-INSERT INTO ventas VALUES 
+INSERT INTO ventas VALUES
 ('V001', 'C001', 'efectivo' ),
 ('V002', 'C002', 'efectivo' ),
 ('V003', 'C003', 'efectivo'),
