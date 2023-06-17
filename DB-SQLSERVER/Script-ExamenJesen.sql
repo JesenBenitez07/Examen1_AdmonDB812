@@ -193,3 +193,33 @@ INSERT INTO ventas VALUES
 ('V0013', 'C0013', 'efectivo' ),
 ('V0014', 'C0014', 'efectivo' ),
 ('V0015', 'C0015', 'efectivo');
+
+
+CREATE TABLE compra (
+  id_compra VARCHAR(5) NOT NULL PRIMARY KEY,
+  id_proveedor VARCHAR(5) NOT NULL,
+  FOREIGN KEY (id_proveedor) REFERENCES proveedor (id_proveedor)
+);
+
+CREATE TABLE detalle_compra (
+  id_compra VARCHAR(5) NOT NULL,
+  id_producto VARCHAR(5) NOT NULL,
+  cantidad INT NOT NULL,
+  PRIMARY KEY (id_compra, id_producto),
+  FOREIGN KEY (id_compra) REFERENCES compra (id_compra),
+  FOREIGN KEY (id_producto) REFERENCES producto (id_producto)
+);
+
+CREATE TABLE producto (
+  id_producto VARCHAR(5) NOT NULL PRIMARY KEY,
+  nombre VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE inventario (
+  id_inventario VARCHAR(5) NOT NULL PRIMARY KEY,
+  id_producto VARCHAR(5) NOT NULL,
+  id_compra VARCHAR(5) NOT NULL,
+  cantidad INT NOT NULL,
+  FOREIGN KEY (id_producto) REFERENCES producto (id_producto),
+  FOREIGN KEY (id_compra) REFERENCES compra (id_compra)
+);
